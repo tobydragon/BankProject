@@ -1,0 +1,13 @@
+[ {
+  "email" : "bob@roadrunner.com",
+  "balance" : 500.0
+}, {
+  "email" : "alice@be.ca",
+  "balance" : 100.05
+}, {
+  "email" : "a@b.com",
+  "balance" : 1234567.89
+}, {
+  "email" : "a.bc.d@xyz.edu",
+  "balance" : 0.35
+} ]

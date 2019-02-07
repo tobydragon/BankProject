@@ -34,7 +34,6 @@ public class BankAccount {
 
     }
 
-
     public static boolean isEmailValid(String email){
         if (email.indexOf('@') == -1){
             return false;
@@ -42,5 +41,16 @@ public class BankAccount {
         else {
             return true;
         }
+    }
+
+    // Below needed for JSON I/O reading
+    public BankAccount(){ }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 }
