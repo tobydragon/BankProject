@@ -74,4 +74,21 @@ class JsonUtilTest {
 
         assertTrue(new File("src/test/resources/bankAccountListToAndFromJsonFileTest.json").delete());
     }
+
+    @Test
+    void savingsAccountToAndFromJsonFileTest() throws IOException {
+        //write out and check that it is there
+        SavingsAccount toWriteOut = new SavingsAccount("a@b.com", 100, 0.02);
+        JsonUtil.toJsonFile("src/test/resources/savingsAccountToAndFromJsonFileTest.json", toWriteOut);
+        assertTrue(new File("src/test/resources/savingsAccountToAndFromJsonFileTest.json").exists());
+
+        //read in and check that all information is still there in the new object
+        SavingsAccount readIn = JsonUtil.fromJsonFile("src/test/resources/savingsAccountToAndFromJsonFileTest.json", SavingsAccount.class);
+        assertEquals(toWriteOut.getEmail(), readIn.getEmail());
+        assertEquals(toWriteOut.getBalance(), readIn.getBalance());
+        assertEquals(toWriteOut.getInterestRate(),  readIn.getInterestRate());
+
+        assertTrue(new File("src/test/resources/savingsAccountToAndFromJsonFileTest.json").delete());
+
+    }
 }

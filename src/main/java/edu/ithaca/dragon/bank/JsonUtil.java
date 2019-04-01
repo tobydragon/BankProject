@@ -27,8 +27,10 @@ public class JsonUtil {
         return  mapper.readValue(new File(filename), classToBeCreated);
     }
 
-    public static <T> List<T> listFromJsonFile(String filename, Class<T> classToBeCreated) throws IOException {
+    public static <T> List<T> listFromJsonFile(String filename, Class<? extends T> classToBeCreated) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
+        //found this fix here:
+        //https://stackoverflow.com/questions/11659844/jackson-deserialize-generic-class-variable
         return  mapper.readValue(new File(filename), mapper.getTypeFactory().constructParametricType(List.class, classToBeCreated));
     }
 
