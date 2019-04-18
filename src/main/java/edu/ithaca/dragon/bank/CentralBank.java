@@ -1,6 +1,18 @@
 package edu.ithaca.dragon.bank;
 
+import java.util.List;
+import java.util.Map;
+
 public class CentralBank {
+
+    Map<String, BankAccount> idToAccountMap;
+
+    //Makes a private copy of all accounts into a map
+    CentralBank(List<BankAccount> accounts){
+        for (BankAccount account : accounts){
+            idToAccountMap.put(account.getEmail(), new BankAccount(account));
+        }
+    }
 
 
     public double checkBalance(String acctId) {

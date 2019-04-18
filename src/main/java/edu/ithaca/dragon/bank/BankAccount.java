@@ -18,6 +18,10 @@ public class BankAccount {
         }
     }
 
+    public BankAccount(BankAccount accountToCopy){
+        this(accountToCopy.email, accountToCopy.balance);
+    }
+
     public double getBalance(){
         return balance;
     }
