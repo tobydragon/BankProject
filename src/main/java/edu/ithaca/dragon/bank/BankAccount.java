@@ -38,6 +38,11 @@ public class BankAccount {
 
     }
 
+    public void deposit (double amount)  {
+        balance += amount;
+
+    }
+
     public static boolean isEmailValid(String email){
         if (email.indexOf('@') == -1){
             return false;

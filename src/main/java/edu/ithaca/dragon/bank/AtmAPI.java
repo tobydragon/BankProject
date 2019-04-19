@@ -19,4 +19,8 @@ public class AtmAPI {
     public void deposit(String acctId, double amount){
         centralBank.deposit(acctId, amount);
     }
+
+    public boolean isAccountIdValid(String acctId){
+        return centralBank.isAccountIdValid(acctId);
+    }
 }
